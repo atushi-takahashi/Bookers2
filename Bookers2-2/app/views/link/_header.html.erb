@@ -1,0 +1,17 @@
+<div id="header">
+  <div class="header-box">
+    <div class="logo">Bookers</div>
+    <ul class="list">
+      <% if user_signed_in? %>
+        <li class="list-item"><a href='#'>Home</a></li>
+        <li class="list-item"><%= link_to "Users", users_path %></li>
+        <li class="list-item"><%= link_to "Books", books_path %></li>
+        <li class="list-item"><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li class="list-item"><%= link_to "Home", root_path %></li>
+        <li class="list-item"><%= link_to "About", home_about_path %></li>
+        <li class="list-item"><%= link_to "sign up", new_user_registration_path, class: 'post' %></li>
+        <li class="list-item"><%= link_to "login", new_user_session_path, class: 'post' %></li>
+      <% end %>
+    </ul>
+</div>

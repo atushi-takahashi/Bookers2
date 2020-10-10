@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <div>
+      <div class="user">
+        <h2>User info</h2>
+        <div class="user-icon"></div>
+        <div class="user-name">
+          <span>name</span>
+          <span>name</span>
+        </div>
+        <div class="user-introduction">
+          <span>introduction</span>
+          <span>introduction</span>
+        </div>
+      </div>
+      <div class="edit"></div>
+      <div class="new">
+        <h2>New book</h2>
+        <div>
+        <%= form_with model:@book, local: true do |f| %>
+          <%= f.label :title, "Title" %><br>
+          <%= f.text_field :title %><br>
+          <%= f.label :body, "Opinion" %><br>
+          <%= f.text_area :body %><br>
+          <%= f.submit "Create Book" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="books">
+      <h2>Books</h2>
+      <div class="books-box">
+        <span class=books-icon></span>
+        <span class=books-title></span>
+        <span class="books-opinion"></span>
+      </div>
+    </div>
+  </div>
+</div>
