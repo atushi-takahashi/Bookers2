@@ -20,6 +20,7 @@
   box-sizing: borer-box;
 }
 
+
 #header {
     height: 70px;
 }
@@ -48,6 +49,7 @@
 .list-item {
     margin: 0 10px;
     line-height: 70px;
+
 }
 
 #footer {
@@ -57,4 +59,10 @@
     line-height: 30px;
     color: #fff;
     font-size: 12px;
+}
+
+.menu{
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
 }

@@ -1,18 +1,21 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
+    @user = current_user
     @book = Book.new
     @books = Book.all.order(created_at: :desc)
   end
 
   def show
     @book = Book.new
+    @book_show = Book.find(params[:id])
   end
 
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
     if @book.save
       redirect_to books_path(@book.id), notice: "You have creatad book successfully."
     else
@@ -32,9 +35,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    if @book.destroy(book_params)
+      @book.destroy
       redirect_to books_path
-    end
   end
 
   private

@@ -1,0 +1,29 @@
+<div class="side-box">
+  <div class="user">
+    <h2>User info</h2>
+    <div class="user-icon"><%= image_tag 'noimage.jpg' %></div>
+    <div class="user-name">
+      <p class="p1">name</p>
+      <p class="p2">name</p>
+    </div>
+    <div class="user-introduction">
+      <p class="p1">introduction</p>
+      <p class="p2">introduction</p>
+    </div>
+  </div>
+  <div class="edit">
+      <%= link_to "edit", edit_user_path(current_user.id), class:"edit-text" %>
+  </div>
+  <div class="new">
+    <h2>New book</h2>
+    <div>
+    <%= form_with model:@book, local: true do |f| %>
+      <%= f.label :title, "Title" %><br>
+      <%= f.text_field :title, class:"title-field" %><br>
+      <%= f.label :body, "Opinion" %><br>
+      <%= f.text_area :body, rows: 10, class:"body-area" %><br>
+      <%= f.submit "Create Book", class:"submit-buttom" %>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,39 +1,30 @@
 <div class="container">
-  <div>
-    <div>
-      <div class="user">
-        <h2>User info</h2>
-        <div class="user-icon"></div>
-        <div class="user-name">
-          <span>name</span>
-          <span>name</span>
-        </div>
-        <div class="user-introduction">
-          <span>introduction</span>
-          <span>introduction</span>
-        </div>
-      </div>
-      <div class="edit"></div>
-      <div class="new">
-        <h2>New book</h2>
-        <div>
-        <%= form_with model:@book, local: true do |f| %>
-          <%= f.label :title, "Title" %><br>
-          <%= f.text_field :title %><br>
-          <%= f.label :body, "Opinion" %><br>
-          <%= f.text_area :body %><br>
-          <%= f.submit "Create Book" %>
-        <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="books">
+  <div class="page-box">
+    <%= render 'books/side'%>
+    <div class="main-box">
       <h2>Books</h2>
       <div class="books-box">
-        <span class=books-icon></span>
-        <span class=books-title></span>
-        <span class="books-opinion"></span>
+        <div class=books-icon>User image</div>
+        <div class=books-title>Title</div>
+        <div class="books-opinion">Opinion</div>
       </div>
+      <% @books.each do |book| %> 
+      <div class="books-box">
+        <div class=books-icon>
+          <%= link_to user_path(book.user_id) do %>
+            <%= image_tag 'noimage.jpg', :size =>'60x60', class:"icon" %>
+          <% end %>
+        </div>
+        <div class=books-title>
+          <%= link_to book_path(book.id), class:"title-link" do %>
+            <%= book.title %>
+          <% end %>
+        </div>
+        <div class="books-opinion">
+          <%= book.body %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
