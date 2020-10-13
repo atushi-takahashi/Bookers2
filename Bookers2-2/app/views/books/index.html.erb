@@ -1,6 +1,6 @@
 <div class="container">
   <div class="page-box">
-    <%= render 'books/side'%>
+    <%= render 'books/side', user:@user, book:@book %>
     <div class="main-box">
       <h2>Books</h2>
       <div class="books-box">
@@ -8,11 +8,11 @@
         <div class=books-title>Title</div>
         <div class="books-opinion">Opinion</div>
       </div>
-      <% @books.each do |book| %> 
+      <% @books.each do |book| %>
       <div class="books-box">
         <div class=books-icon>
           <%= link_to user_path(book.user_id) do %>
-            <%= image_tag 'noimage.jpg', :size =>'60x60', class:"icon" %>
+            <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "noimage.jpg", :size =>'60x60', class:"icon" %>
           <% end %>
         </div>
         <div class=books-title>

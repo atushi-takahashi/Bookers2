@@ -1,3 +1,271 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#users-index,#users-show{
+
+  // width: 1156px;
+
+  .page-box{
+    display: flex;
+    justify-content: center;
+
+    .side-box{
+      flex: 3;
+      margin-left: 10px;
+
+      .user{
+
+        h2{
+
+          font-size: 30px;
+          padding-bottom: 20px;
+
+        }
+
+        .user-icon{
+              border-radius: 50%;
+
+        }
+
+        .user-name{
+
+          overflow: hidden;
+          display: flex;
+          border-bottom: 1px solid gray;
+
+          .p1{
+
+            width: 30%;
+
+          }
+          .p2{
+
+            width: 70%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+          }
+        }
+
+        .user-introduction{
+
+          overflow: hidden;
+          border-bottom: 1px solid gray;
+          display: flex;
+
+          .p1{
+
+            width: 30%;
+
+          }
+          .p2{
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 70%;
+
+          }
+
+        }
+      }
+
+      .edit{
+
+        text-align: center;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        margin: 10px 2px;
+
+        .edit-text{
+
+            display: block;
+            background-color: cornflowerblue;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            width: 100%;
+            font-size: 20px;
+            border: 2px solid;
+            border-color: black;
+
+          }
+
+      }
+
+      .new{
+
+        h2{
+
+          font-size: 30px;
+          padding-bottom: 20px;
+
+        }
+
+        .title-field{
+          width: 100%;
+        }
+
+        .body-area{
+          width: 100%;
+        }
+
+        .submit-buttom{
+          width: 100%;
+          background-color: cornflowerblue;
+          font-size: 20px;
+          color: #fff;
+          border-radius: 5px;
+          border: 2px solid;
+          border-color: black;
+          padding: 3px 0;
+        }
+
+      }
+
+    }
+
+    .main-box{
+      flex: 7;
+      padding-left: 20px;
+      margin-right: 20px;
+
+      h2{
+
+        font-size: 30px;
+        padding-bottom: 20px;
+
+      }
+
+      .books-box{
+
+        display: flex;
+        border-bottom: 1px solid gray;
+        text-align: left;
+        align-items: center;
+        overflow: hidden;
+
+        .books-icon{
+          flex: 1;
+          .icon{
+            margin-top: 5px;
+            border-radius: 50%;
+
+          }
+        }
+
+        .books-title{
+
+          flex: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+
+          .title-link{
+
+          white-space: nowrap;
+          text-decoration: none;
+          color: teal;
+
+          }
+
+
+        }
+
+        .books-opinion{
+
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          .btn{
+
+
+            background-color: cornflowerblue;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            padding: 7px;
+
+
+          }
+
+
+        }
+
+      }
+
+
+    }
+  }
+
+}
+
+#users-edit{
+
+  .book-edit{
+
+    display: flex;
+
+    .box1{
+
+      flex: 2;
+
+    }
+
+    .box2{
+
+      flex: 6;
+
+      h2{
+        font-size: 30px;
+        padding-bottom: 20px;
+      }
+
+      .form{
+
+        .name{
+          width: 100%;
+          margin: 10px 0px;
+
+        }
+
+        .image{
+          
+          margin: 10px 0px;
+
+        }
+
+        .introduction{
+          width: 100%;
+          margin: 10px 0px;
+
+        }
+
+        .btn{
+          width: 100%;
+          background-color: cornflowerblue;
+          font-size: 20px;
+          color: #fff;
+          border-radius: 5px;
+          border: 2px solid;
+          border-color: black;
+          padding: 3px 0;
+          margin: 10px 0px;
+
+        }
+
+
+      }
+
+
+    }
+
+    .box3{
+
+      flex: 2;
+
+    }
+
+  }
+
+}

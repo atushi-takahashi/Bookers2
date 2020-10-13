@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'toppage#top'
   get 'home/about' => 'toppage#about'
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :create, :show, :edit, :update]
   resources :books, only: [:index, :show, :edit, :update, :create, :destroy]
   
 end

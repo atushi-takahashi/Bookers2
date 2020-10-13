@@ -1,2 +1,26 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+  <div class="page-box">
+    <%= render 'books/side', user:@user, book:@book %>
+    <div class="main-box">
+      <h2>Books</h2>
+      <div class="books-box">
+        <div class=books-icon>User image</div>
+        <div class=books-title>Name</div>
+        <div class="books-opinion">Link</div>
+      </div>
+      <% @users.each do |user| %>
+      <div class="books-box">
+        <div class=books-icon>
+          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "noimage.jpg", :size =>'60x60', class:"icon" %>
+        </div>
+        <div class=books-title>
+          <%= user.name %>
+        </div>
+        <div class="books-opinion">
+          <%= link_to "Show", user_path(user), class:"btn" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

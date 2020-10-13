@@ -1,14 +1,14 @@
 <div class="side-box">
   <div class="user">
     <h2>User info</h2>
-    <div class="user-icon"><%= image_tag 'noimage.jpg' %></div>
+    <div class="user-icon"><%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "noimage.jpg" %></div>
     <div class="user-name">
       <p class="p1">name</p>
-      <p class="p2">name</p>
+      <p class="p2"><%= user.name %></p>
     </div>
     <div class="user-introduction">
       <p class="p1">introduction</p>
-      <p class="p2">introduction</p>
+      <p class="p2"><%= user.introduction %></p>
     </div>
   </div>
   <div class="edit">
